@@ -167,32 +167,32 @@ struct get_member_kind<T (C::*)(Ts...) const &&> {
 #if __cpp_noexcept_function_type
 template <class T, class C, class ...Ts>
 struct get_member_kind<T (C::*)(Ts...) noexcept> {
-    static constexpr member_kind value = member_type::member_function;
+    static constexpr member_kind value = member_kind::member_function;
 };
 
 template <class T, class C, class ...Ts>
 struct get_member_kind<T (C::*)(Ts...) const noexcept> {
-    static constexpr member_kind value = member_type::member_function;
+    static constexpr member_kind value = member_kind::member_function;
 };
 
 template <class T, class C, class ...Ts>
 struct get_member_kind<T (C::*)(Ts...) & noexcept> {
-    static constexpr member_kind value = member_type::member_function;
+    static constexpr member_kind value = member_kind::member_function;
 };
 
 template <class T, class C, class ...Ts>
 struct get_member_kind<T (C::*)(Ts...) const & noexcept> {
-    static constexpr member_kind value = member_type::member_function;
+    static constexpr member_kind value = member_kind::member_function;
 };
 
 template <class T, class C, class ...Ts>
 struct get_member_kind<T (C::*)(Ts...) && noexcept> {
-    static constexpr member_kind value = member_type::member_function;
+    static constexpr member_kind value = member_kind::member_function;
 };
 
 template <class T, class C, class ...Ts>
 struct get_member_kind<T (C::*)(Ts...) const && noexcept> {
-    static constexpr member_kind value = member_type::member_function;
+    static constexpr member_kind value = member_kind::member_function;
 };
 #endif
 
@@ -204,7 +204,7 @@ struct get_member_kind<T (*)(Ts...)> {
 #if __cpp_noexcept_function_type
 template <class T, class ...Ts>
 struct get_member_kind<T (*)(Ts...) noexcept> {
-    static constexpr member_kind value = member_type::static_function;
+    static constexpr member_kind value = member_kind::static_function;
 };
 #endif
 
